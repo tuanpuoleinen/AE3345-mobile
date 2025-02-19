@@ -23,8 +23,8 @@ public class Notifications : MonoBehaviour
         var notification = new AndroidNotification();
         notification.Title = "Hello World!";
         notification.Text = "Play me ;)";
+        notification.SmallIcon = "my_custom_icon_id";
         notification.FireTime = System.DateTime.Now.AddMinutes(0.1f);
-
         AndroidNotificationCenter.SendNotification(notification, "channel_id");
 
     }

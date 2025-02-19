@@ -19,8 +19,11 @@ public class Gravity : MonoBehaviour
 
     private void Update()
     {
-        Vector2 deviceOrientation = accelerometer.acceleration.ReadValue();
-        Physics2D.gravity = deviceOrientation * grav;
-        debugText.text = ("Gravity: " + deviceOrientation * grav);
+        if (accelerometer != null)
+        {
+            Vector2 deviceOrientation = accelerometer.acceleration.ReadValue();
+            Physics2D.gravity = deviceOrientation * grav;
+            debugText.text = ("Gravity: " + deviceOrientation * grav);
+        }
     }
 }
