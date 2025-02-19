@@ -15,5 +15,7 @@ public class Movement : MonoBehaviour
 
         // Move the object this component is assigned to (Player) based on moveDirection, moveSpeed and Time.deltaTime
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
     }
 }
